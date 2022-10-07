@@ -15,6 +15,7 @@
 package fr.neatmonster.nocheatplus.checks.blockplace;
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import org.bukkit.Material;
@@ -33,6 +34,7 @@ import fr.neatmonster.nocheatplus.worlds.IWorldData;
 public class BlockPlaceConfig extends ACheckConfig {
 
     public final ActionList againstActions;
+    public final Set<Material> againstBlacklist = new HashSet<>();
 
     public final boolean    autoSignSkipEmpty;
     public final ActionList autoSignActions;
@@ -81,7 +83,7 @@ public class BlockPlaceConfig extends ACheckConfig {
         final ConfigFile config = worldData.getRawConfiguration();
 
         againstActions = config.getOptimizedActionList(ConfPaths.BLOCKPLACE_AGAINST_ACTIONS, Permissions.BLOCKPLACE_AGAINST);
-
+        config.readMaterialFromList(ConfPaths.BLOCKPLACE_AGAINST_BLACKLIST, againstBlacklist);
         autoSignSkipEmpty = config.getBoolean(ConfPaths.BLOCKPLACE_AUTOSIGN_SKIPEMPTY);
         autoSignActions = config.getOptimizedActionList(ConfPaths.BLOCKPLACE_AUTOSIGN_ACTIONS, Permissions.BLOCKPLACE_AUTOSIGN);
 
