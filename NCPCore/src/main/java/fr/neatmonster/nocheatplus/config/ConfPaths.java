@@ -251,6 +251,7 @@ public abstract class ConfPaths {
     private static final String BLOCKPLACE_AGAINST                       = BLOCKPLACE + "against.";
     public static final String  BLOCKPLACE_AGAINST_CHECK                 = BLOCKPLACE_AGAINST + SUB_ACTIVE;
     public static final String BLOCKPLACE_AGAINST_ACTIONS                = BLOCKPLACE_AGAINST + "actions";
+    public static final String BLOCKPLACE_AGAINST_BLACKLIST              = BLOCKPLACE_AGAINST + "blacklist";
 
     private static final String BLOCKPLACE_AUTOSIGN                         = BLOCKPLACE + "autosign.";
     public static final String  BLOCKPLACE_AUTOSIGN_CHECK                = BLOCKPLACE_AUTOSIGN + SUB_ACTIVE;

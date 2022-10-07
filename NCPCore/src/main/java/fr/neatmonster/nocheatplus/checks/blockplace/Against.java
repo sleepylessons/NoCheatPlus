@@ -88,7 +88,8 @@ public class Against extends Check {
                 // Block was placed against something (e.g. cactus), allow it.
             }
             else if (!pData.hasPermission(Permissions.BLOCKPLACE_AGAINST_AIR, player)
-                    && placedMat != BridgeMaterial.LILY_PAD) {
+                    && placedMat != BridgeMaterial.LILY_PAD
+                    && (cc.againstBlacklist.contains(placedMat) || cc.againstBlacklist.isEmpty())) {
                 violation = true;
                 // Attempted to place a block against a null one (air)
             }
